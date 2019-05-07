@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+// TODO: remove the dependency of this class on having a physically rendered object.
 public class Metronome : MonoBehaviour
 {
     static Metronome _instance;
@@ -25,8 +26,8 @@ public class Metronome : MonoBehaviour
 
     public UnityEvent OnTick;
 
-    // how long before/after a beat that a player can still input.
-    // half is before, half is after.
+    // how long after a beat that a player can still input.
+    // the higher the value, the greater the time.
     [Range(0,1.0f)]
     public float gracePeriodPercentage = 0.5f;
 

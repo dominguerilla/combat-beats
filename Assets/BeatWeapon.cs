@@ -8,10 +8,11 @@ using UnityEngine;
 public class BeatWeapon : MonoBehaviour
 {
     public BeatWeaponDefinition weapon;
-    
-    // 0 is lo aim
-    // 1 is mid aim
-    // 2 is hi aim
+
+    // The following are Vector3 arrays representing the position and rotation of the weapon when aiming/attacking.
+    // 0 is lo 
+    // 1 is mid 
+    // 2 is hi 
     public Vector3[] aimPositions;
     public Vector3[] aimEulerAngles;
     public Vector3[] attackPositions;
@@ -20,11 +21,18 @@ public class BeatWeapon : MonoBehaviour
     Vector3 idlePosition;
     Vector3 idleRotation;
 
-    // Start is called before the first frame update
     void Start()
     {
         idlePosition = transform.localPosition;   
         idleRotation = transform.localRotation.eulerAngles;
+    }
+
+    public void AimWeapon(POSITION pos){
+        MoveToPosition(aimPositions, aimEulerAngles, pos);
+    }
+
+    public void ResetPosition(){
+        StartCoroutine(Move(idlePosition, idleRotation, 100f));
     }
 
     void MoveToPosition(Vector3[] positions, Vector3[] angles, POSITION pos, float speed=10f){
@@ -35,14 +43,6 @@ public class BeatWeapon : MonoBehaviour
             default:
                 break;
         }
-    }
-
-    public void AimWeapon(POSITION pos){
-        MoveToPosition(aimPositions, aimEulerAngles, pos);
-    }
-
-    public void ResetPosition(){
-        StartCoroutine(Move(idlePosition, idleRotation, 100f));
     }
 
     IEnumerator Move(Vector3 targetPosition, Vector3 targetRotation, float speed){
