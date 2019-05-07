@@ -190,6 +190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 497245594}
+  - component: {fileID: 497245598}
   - component: {fileID: 497245597}
   - component: {fileID: 497245596}
   - component: {fileID: 497245595}
@@ -272,6 +273,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497245593}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &497245598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497245593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79135ff7530f46d4691e14333769bc92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: b277c1ca6d293ad4783c965c3df2ef6a, type: 2}
+  aimPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0.37, y: 0.422, z: 0.69}
+  aimEulerAngles:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: -12.632, y: 9.516001, z: 1.377}
+  attackPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 2.255, y: 0.539, z: 0.26}
+  attackEulerAngles:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: -1.784, y: 8.029, z: 0.468}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +487,7 @@ GameObject:
   - component: {fileID: 668147471}
   - component: {fileID: 668147470}
   - component: {fileID: 668147469}
+  - component: {fileID: 668147473}
   m_Layer: 0
   m_Name: Metronome
   m_TagString: Untagged
@@ -536,6 +567,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &668147473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668147468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2c4357a3402bd44af674784e28969e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BPM: 105
+  beatScalar: 2
+  OnTick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  gracePeriodPercentage: 0.24
 --- !u!1 &718460049
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +875,7 @@ GameObject:
   - component: {fileID: 1363528210}
   - component: {fileID: 1363528209}
   - component: {fileID: 1363528208}
+  - component: {fileID: 1363528212}
   m_Layer: 0
   m_Name: P1
   m_TagString: Untagged
@@ -906,6 +958,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1363528212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363528207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995abb7ed9b085e41b8955e929c7f403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatCheck: 32
+  testWeap: {fileID: 497245598}
 --- !u!1 &1554896663
 GameObject:
   m_ObjectHideFlags: 0
